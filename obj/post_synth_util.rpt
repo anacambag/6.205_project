@@ -1,0 +1,104 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Tue Dec 10 22:45:02 2024
+| Host         : eecs-digital-41 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_utilization -file obj/post_synth_util.rpt -hierarchical -hierarchical_depth 4
+| Design       : top_level
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------------------+----------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                 Instance                |                       Module                       | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------------------------+----------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| top_level                               |                                              (top) |       4569 |       4553 |       0 |   16 | 1053 |      8 |      9 |          1 |
+|   (top_level)                           |                                              (top) |          8 |          1 |       0 |    7 |  267 |      0 |      0 |          0 |
+|   blue_ser                              |                                    tmds_serializer |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   coins_sprite                          |                                 image_sprite_coins |        182 |        181 |       0 |    1 |    1 |      0 |      2 |          0 |
+|     (coins_sprite)                      |                                 image_sprite_coins |          1 |          0 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     image_ram                           |  xilinx_single_port_ram_read_first__parameterized5 |        165 |        165 |       0 |    0 |    0 |      0 |      1 |          0 |
+|     palette_ram                         |  xilinx_single_port_ram_read_first__parameterized6 |         16 |         16 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   com_before_sprite_m                   |                                      before_sprite |         75 |         75 |       0 |    0 |    2 |      0 |      0 |          0 |
+|   com_sprite_game_over                  |                                   game_over_sprite |         52 |         51 |       0 |    1 |    1 |      0 |      2 |          0 |
+|     (com_sprite_game_over)              |                                   game_over_sprite |         28 |         27 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     image_ram                           |  xilinx_single_port_ram_read_first__parameterized9 |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|     palette_ram                         | xilinx_single_port_ram_read_first__parameterized10 |         24 |         24 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   com_sprite_m                          |                                      image_sprite2 |         10 |          9 |       0 |    1 |    1 |      2 |      1 |          0 |
+|     (com_sprite_m)                      |                                      image_sprite2 |          7 |          6 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     image_BRUM                          |  xilinx_single_port_ram_read_first__parameterized1 |          2 |          2 |       0 |    0 |    0 |      2 |      0 |          0 |
+|     palette_BRUM                        |  xilinx_single_port_ram_read_first__parameterized2 |          1 |          1 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   com_sprite_mario                      |                                       mario_sprite |         94 |         93 |       0 |    1 |    1 |      1 |      1 |          0 |
+|     (com_sprite_mario)                  |                                       mario_sprite |         12 |         11 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     image_ram                           |  xilinx_single_port_ram_read_first__parameterized7 |          0 |          0 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     palette_ram                         |  xilinx_single_port_ram_read_first__parameterized8 |         82 |         82 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   enemies_sprite                        |                               image_sprite_enemies |        334 |        333 |       0 |    1 |    1 |      0 |      2 |          0 |
+|     (enemies_sprite)                    |                               image_sprite_enemies |          1 |          0 |       0 |    1 |    1 |      0 |      0 |          0 |
+|     image_ram                           |  xilinx_single_port_ram_read_first__parameterized3 |        212 |        212 |       0 |    0 |    0 |      0 |      1 |          0 |
+|     palette_ram                         |  xilinx_single_port_ram_read_first__parameterized4 |        121 |        121 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   game_over_addr                        |                                   before_game_over |         16 |         16 |       0 |    0 |    0 |      0 |      0 |          1 |
+|   genblk1[0].boundary_enemies           |                                            enemies |        236 |        236 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[10].boundary_enemies          |                                          enemies_0 |        184 |        184 |       0 |    0 |   36 |      0 |      0 |          0 |
+|   genblk1[11].boundary_enemies          |                                          enemies_1 |        179 |        179 |       0 |    0 |   36 |      0 |      0 |          0 |
+|   genblk1[12].boundary_enemies          |                                          enemies_2 |        196 |        196 |       0 |    0 |   36 |      0 |      0 |          0 |
+|   genblk1[13].boundary_enemies          |                                          enemies_3 |        178 |        178 |       0 |    0 |   36 |      0 |      0 |          0 |
+|   genblk1[1].boundary_enemies           |                                          enemies_4 |        159 |        159 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[2].boundary_enemies           |                                          enemies_5 |        169 |        169 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[3].boundary_enemies           |                                          enemies_6 |        161 |        161 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[4].boundary_enemies           |                                          enemies_7 |        170 |        170 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[5].boundary_enemies           |                                          enemies_8 |        161 |        161 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[6].boundary_enemies           |                                          enemies_9 |        181 |        181 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[7].boundary_enemies           |                                         enemies_10 |        160 |        160 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[8].boundary_enemies           |                                         enemies_11 |        172 |        172 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   genblk1[9].boundary_enemies           |                                         enemies_12 |        175 |        175 |       0 |    0 |   36 |      0 |      0 |          0 |
+|   genblk2[0].boundary_coins             |                                              coins |         66 |         66 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   genblk2[1].boundary_coins             |                                           coins_13 |         62 |         62 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   genblk2[2].boundary_coins             |                                           coins_14 |         71 |         71 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   genblk2[3].boundary_coins             |                                           coins_15 |         62 |         62 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   genblk2[4].boundary_coins             |                                           coins_16 |         72 |         72 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   genblk2[5].boundary_coins             |                                           coins_17 |         73 |         73 |       0 |    0 |   18 |      0 |      0 |          0 |
+|   green_ser                             |                                 tmds_serializer_18 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   mario_module                          |                                              mario |       1070 |       1070 |       0 |    0 |   47 |      4 |      0 |          0 |
+|     (mario_module)                      |                                              mario |        789 |        789 |       0 |    0 |   47 |      0 |      0 |          0 |
+|     genblk1[0].com_before_sprite_m1     |                                   before_sprite_23 |         60 |         60 |       0 |    0 |    0 |      1 |      0 |          0 |
+|       (genblk1[0].com_before_sprite_m1) |                                   before_sprite_23 |         26 |         26 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       image_BRUM                        |               xilinx_single_port_ram_read_first_34 |         34 |         34 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     genblk1[1].com_before_sprite_m1     |                                   before_sprite_24 |         34 |         34 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     genblk1[2].com_before_sprite_m1     |                                   before_sprite_25 |         32 |         32 |       0 |    0 |    0 |      1 |      0 |          0 |
+|       (genblk1[2].com_before_sprite_m1) |                                   before_sprite_25 |         25 |         25 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       image_BRUM                        |               xilinx_single_port_ram_read_first_33 |          7 |          7 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     genblk2[0].com_before_sprite_m1     |                                   before_sprite_26 |         35 |         35 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     genblk3[0].com_before_sprite_m1     |                                   before_sprite_27 |         68 |         68 |       0 |    0 |    0 |      1 |      0 |          0 |
+|       (genblk3[0].com_before_sprite_m1) |                                   before_sprite_27 |          7 |          7 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       image_BRUM                        |               xilinx_single_port_ram_read_first_32 |         61 |         61 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     genblk5[0].com_before_sprite_m1     |                                   before_sprite_28 |          8 |          8 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     genblk5[1].com_before_sprite_m1     |                                   before_sprite_29 |         37 |         37 |       0 |    0 |    0 |      1 |      0 |          0 |
+|       (genblk5[1].com_before_sprite_m1) |                                   before_sprite_29 |          7 |          7 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       image_BRUM                        |               xilinx_single_port_ram_read_first_31 |         30 |         30 |       0 |    0 |    0 |      1 |      0 |          0 |
+|     genblk5[2].com_before_sprite_m1     |                                   before_sprite_30 |          7 |          7 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   mhdmicw                               |                                  hdmi_clk_wiz_720p |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   mvg                                   |                                      video_sig_gen |         34 |         34 |       0 |    0 |   21 |      0 |      0 |          0 |
+|   mydisplay                             |                                        display_fsm |         60 |         56 |       0 |    4 |   51 |      1 |      0 |          0 |
+|     (mydisplay)                         |                                        display_fsm |         50 |         46 |       0 |    4 |   51 |      0 |      0 |          0 |
+|     com_before_sprite_m                 |                                   before_sprite_22 |         10 |         10 |       0 |    0 |    0 |      1 |      0 |          0 |
+|       image_BRUM                        |                  xilinx_single_port_ram_read_first |         10 |         10 |       0 |    0 |    0 |      1 |      0 |          0 |
+|   red_ser                               |                                 tmds_serializer_19 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |          0 |
+|   tmds_blue                             |                                       tmds_encoder |          3 |          3 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   tmds_green                            |                                    tmds_encoder_20 |          3 |          3 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   tmds_red                              |                                    tmds_encoder_21 |          3 |          3 |       0 |    0 |   14 |      0 |      0 |          0 |
+|   to_know_collision                     |                                    collision_check |        150 |        150 |       0 |    0 |   14 |      0 |      1 |          0 |
+|     (to_know_collision)                 |                                    collision_check |        111 |        111 |       0 |    0 |   14 |      0 |      0 |          0 |
+|     Collisions_BRUM                     |  xilinx_single_port_ram_read_first__parameterized0 |         39 |         39 |       0 |    0 |    0 |      0 |      1 |          0 |
++-----------------------------------------+----------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+
+

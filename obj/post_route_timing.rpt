@@ -1,0 +1,100 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Tue Dec 10 22:45:52 2024
+| Host         : eecs-digital-41 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_timing -file obj/post_route_timing.rpt
+| Design       : top_level
+| Device       : 7s50-csga324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.510ns  (required time - arrival time)
+  Source:                 mario_module/y_array_location_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Destination:            mario_module/y_array_location_reg[9]_rep/D
+                            (rising edge-triggered cell FDRE clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk_pixel_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            13.468ns  (clk_pixel_clk_wiz_0 rise@13.468ns - clk_pixel_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        12.688ns  (logic 3.217ns (25.354%)  route 9.471ns (74.646%))
+  Logic Levels:           11  (CARRY4=1 LUT2=2 LUT3=1 LUT4=2 LUT5=3 LUT6=2)
+  Clock Path Skew:        -0.035ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.574ns = ( 11.894 - 13.468 ) 
+    Source Clock Delay      (SCD):    -0.977ns
+    Clock Pessimism Removal (CPR):    0.562ns
+  Clock Uncertainty:      0.168ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.329ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    N15                                               0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.440     1.440 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.673    mhdmicw/clk_ref_clk_wiz_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.965    -4.291 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.666    -2.625    mhdmicw/clk_pixel_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.529 r  mhdmicw/clkout1_buf/O
+                         net (fo=1101, routed)        1.552    -0.977    mario_module/clk_pixel
+    SLICE_X43Y28         FDRE                                         r  mario_module/y_array_location_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y28         FDRE (Prop_fdre_C_Q)         0.456    -0.521 f  mario_module/y_array_location_reg[5]/Q
+                         net (fo=343, routed)         1.136     0.616    mario_module/genblk2[0].com_before_sprite_m1/Q[1]
+    SLICE_X42Y23         LUT3 (Prop_lut3_I1_O)        0.153     0.769 r  mario_module/genblk2[0].com_before_sprite_m1/y_array_location[7]_i_5/O
+                         net (fo=32, routed)          0.932     1.701    mario_module/genblk2[0].com_before_sprite_m1_n_0
+    SLICE_X44Y22         LUT5 (Prop_lut5_I3_O)        0.331     2.032 r  mario_module/x_array_location[12]_i_311/O
+                         net (fo=28, routed)          1.370     3.402    genblk1[12].boundary_enemies/x_array_location_reg[12]_i_70_1
+    SLICE_X31Y13         LUT4 (Prop_lut4_I2_O)        0.124     3.526 r  genblk1[12].boundary_enemies/x_array_location[12]_i_252/O
+                         net (fo=1, routed)           0.000     3.526    genblk1[12].boundary_enemies/x_array_location[12]_i_252_n_0
+    SLICE_X31Y13         CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457     3.983 f  genblk1[12].boundary_enemies/x_array_location_reg[12]_i_70/CO[1]
+                         net (fo=1, routed)           0.862     4.845    genblk1[12].boundary_enemies/mario_module/mario_enemy_collision242_in
+    SLICE_X31Y14         LUT5 (Prop_lut5_I1_O)        0.329     5.174 f  genblk1[12].boundary_enemies/x_array_location[12]_i_25/O
+                         net (fo=1, routed)           1.153     6.327    mario_module/x_array_location[12]_i_3_3
+    SLICE_X35Y22         LUT6 (Prop_lut6_I4_O)        0.124     6.451 f  mario_module/x_array_location[12]_i_10/O
+                         net (fo=1, routed)           0.955     7.406    mario_module/x_array_location[12]_i_10_n_0
+    SLICE_X39Y29         LUT6 (Prop_lut6_I0_O)        0.124     7.530 f  mario_module/x_array_location[12]_i_3/O
+                         net (fo=14, routed)          0.513     8.043    mario_module/p_130_in
+    SLICE_X40Y29         LUT4 (Prop_lut4_I3_O)        0.120     8.163 f  mario_module/y_array_location[9]_i_6/O
+                         net (fo=10, routed)          0.848     9.011    mario_module/x_array_location1131_out
+    SLICE_X40Y29         LUT2 (Prop_lut2_I1_O)        0.353     9.364 f  mario_module/y_array_location[1]_i_5/O
+                         net (fo=10, routed)          0.612     9.976    mario_module/genblk3[0].com_before_sprite_m1/image_BRUM/y_array_location_reg[1]
+    SLICE_X43Y30         LUT2 (Prop_lut2_I0_O)        0.320    10.296 r  mario_module/genblk3[0].com_before_sprite_m1/image_BRUM/y_array_location[9]_i_10/O
+                         net (fo=5, routed)           0.618    10.914    mario_module/genblk3[0].com_before_sprite_m1/image_BRUM/y_array_location[9]_i_10_n_0
+    SLICE_X46Y29         LUT5 (Prop_lut5_I4_O)        0.326    11.240 r  mario_module/genblk3[0].com_before_sprite_m1/image_BRUM/y_array_location[9]_rep_i_1/O
+                         net (fo=1, routed)           0.472    11.712    mario_module/genblk3[0].com_before_sprite_m1_n_38
+    SLICE_X44Y29         FDRE                                         r  mario_module/y_array_location_reg[9]_rep/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                     13.468    13.468 r  
+    N15                                               0.000    13.468 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    13.468    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.370    14.838 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    16.000    mhdmicw/clk_ref_clk_wiz_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.221     8.779 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.587    10.366    mhdmicw/clk_pixel_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    10.457 r  mhdmicw/clkout1_buf/O
+                         net (fo=1101, routed)        1.437    11.894    mario_module/clk_pixel
+    SLICE_X44Y29         FDRE                                         r  mario_module/y_array_location_reg[9]_rep/C
+                         clock pessimism              0.562    12.456    
+                         clock uncertainty           -0.168    12.288    
+    SLICE_X44Y29         FDRE (Setup_fdre_C_D)       -0.067    12.221    mario_module/y_array_location_reg[9]_rep
+  -------------------------------------------------------------------
+                         required time                         12.221    
+                         arrival time                         -11.712    
+  -------------------------------------------------------------------
+                         slack                                  0.510    
+
+
+
+

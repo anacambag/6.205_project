@@ -1,0 +1,100 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Tue Dec 10 22:45:02 2024
+| Host         : eecs-digital-41 running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_timing -file obj/post_synth_timing.rpt
+| Design       : top_level
+| Device       : 7s50-csga324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.181ns  (required time - arrival time)
+  Source:                 coins_sprite/palette_ram/BRAM_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E1 clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Destination:            tmds_green/tally_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk_pixel_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            13.468ns  (clk_pixel_clk_wiz_0 rise@13.468ns - clk_pixel_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        12.003ns  (logic 2.234ns (18.612%)  route 9.769ns (81.388%))
+  Logic Levels:           11  (LUT3=1 LUT4=2 LUT5=3 LUT6=5)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.063ns = ( 11.405 - 13.468 ) 
+    Source Clock Delay      (SCD):    -1.388ns
+    Clock Pessimism Removal (CPR):    0.530ns
+  Clock Uncertainty:      0.168ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.329ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    N15                                               0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.440     1.440 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584     2.024    mhdmicw/clk_ref_clk_wiz_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.108    -3.083 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.800    -2.284    mhdmicw/clk_pixel_clk_wiz_0
+                         BUFG (Prop_bufg_I_O)         0.096    -2.188 r  mhdmicw/clkout1_buf/O
+                         net (fo=1097, unplaced)      0.800    -1.388    coins_sprite/palette_ram/clk_pixel
+                         RAMB18E1                                     r  coins_sprite/palette_ram/BRAM_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+                         RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[3])
+                                                      0.882    -0.506 f  coins_sprite/palette_ram/BRAM_reg/DOBDO[3]
+                         net (fo=2, unplaced)         0.800     0.294    coins_sprite/palette_ram/BRAM_reg_0[13]
+                         LUT5 (Prop_lut5_I4_O)        0.124     0.418 f  coins_sprite/palette_ram/tmds_out[4]_i_16__0/O
+                         net (fo=1, unplaced)         1.111     1.529    coins_sprite/palette_ram/tmds_out[4]_i_16__0_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124     1.653 f  coins_sprite/palette_ram/tmds_out[4]_i_9/O
+                         net (fo=22, unplaced)        1.173     2.826    enemies_sprite/palette_ram/tmds_out[4]_i_2
+                         LUT6 (Prop_lut6_I0_O)        0.124     2.950 r  enemies_sprite/palette_ram/tmds_out[4]_i_5__0/O
+                         net (fo=14, unplaced)        0.953     3.903    enemies_sprite/palette_ram/dead_frame_reg_0
+                         LUT6 (Prop_lut6_I1_O)        0.124     4.027 f  enemies_sprite/palette_ram/tmds_out[1]_i_2__1/O
+                         net (fo=5, unplaced)         0.930     4.957    enemies_sprite/palette_ram/tmds_out[1]_i_2__1_n_0
+                         LUT3 (Prop_lut3_I0_O)        0.124     5.081 f  enemies_sprite/palette_ram/tally[1]_i_10__0/O
+                         net (fo=1, unplaced)         1.111     6.192    enemies_sprite/palette_ram/tally[1]_i_10__0_n_0
+                         LUT5 (Prop_lut5_I0_O)        0.124     6.316 r  enemies_sprite/palette_ram/tally[1]_i_4__0/O
+                         net (fo=23, unplaced)        0.512     6.828    enemies_sprite/palette_ram/tally[1]_i_4__0_n_0
+                         LUT4 (Prop_lut4_I1_O)        0.118     6.946 r  enemies_sprite/palette_ram/tally[1]_i_9__0/O
+                         net (fo=10, unplaced)        1.154     8.100    enemies_sprite/palette_ram/tally[1]_i_9__0_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124     8.224 r  enemies_sprite/palette_ram/tally[1]_i_3__0/O
+                         net (fo=7, unplaced)         0.484     8.708    enemies_sprite/palette_ram/tally[1]_i_3__0_n_0
+                         LUT4 (Prop_lut4_I3_O)        0.118     8.826 r  enemies_sprite/palette_ram/tally[4]_i_14__0/O
+                         net (fo=2, unplaced)         1.122     9.948    enemies_sprite/palette_ram/tally[4]_i_14__0_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124    10.072 r  enemies_sprite/palette_ram/tally[4]_i_4__0/O
+                         net (fo=1, unplaced)         0.419    10.491    enemies_sprite/palette_ram/tally[4]_i_4__0_n_0
+                         LUT5 (Prop_lut5_I2_O)        0.124    10.615 r  enemies_sprite/palette_ram/tally[4]_i_1/O
+                         net (fo=1, unplaced)         0.000    10.615    tmds_green/D[3]
+                         FDRE                                         r  tmds_green/tally_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                     13.468    13.468 r  
+    N15                                               0.000    13.468 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    13.468    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.370    14.838 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    15.277    mhdmicw/clk_ref_clk_wiz_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.378     9.899 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.760    10.659    mhdmicw/clk_pixel_clk_wiz_0
+                         BUFG (Prop_bufg_I_O)         0.091    10.750 r  mhdmicw/clkout1_buf/O
+                         net (fo=1097, unplaced)      0.655    11.405    tmds_green/clk_pixel
+                         FDRE                                         r  tmds_green/tally_reg[4]/C
+                         clock pessimism              0.530    11.935    
+                         clock uncertainty           -0.168    11.767    
+                         FDRE (Setup_fdre_C_D)        0.029    11.796    tmds_green/tally_reg[4]
+  -------------------------------------------------------------------
+                         required time                         11.796    
+                         arrival time                         -10.615    
+  -------------------------------------------------------------------
+                         slack                                  1.181    
+
+
+
+
